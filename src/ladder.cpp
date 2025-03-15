@@ -52,13 +52,13 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
 
 			string latest = path.back();
 
-			if (latest == end_word) return path;
-
 			for (string word : word_list) {
 				if (!seen.count(word) && is_adjacent(latest, word)) {
 					vector<string> possible_path = path;
 
 					possible_path.push_back(word);
+					if (latest == end_word) return possible_path;
+
 					ladders.push(possible_path);
 					level_seen.insert(word);
 				}
@@ -73,12 +73,13 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
 }
 
 void load_words(set<string> & word_list, const string& file_name) {
-	ifstream f(file_name);
+	return;
+	// ifstream f(file_name);
 
-	for (string word; f >> word; )
-		word_list.insert(word);
+	// for (string word; f >> word; )
+	// 	word_list.insert(word);
 	
-	f.close();
+	// f.close();
 }
 
 void print_word_ladder(const vector<string>& ladder) {
