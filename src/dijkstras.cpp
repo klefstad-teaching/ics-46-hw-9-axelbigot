@@ -7,7 +7,7 @@ struct Node {
 	Node(int _vertex, int _weight)
 	: vertex(_vertex), weight(_weight) { }
 
-	bool operator>(Node& other) {
+	bool operator>(const Node other) {
 		return weight > other.weight;
 	}
 };
@@ -62,5 +62,6 @@ vector<int> extract_shortest_path(const vector<int>& distances, const vector<int
 }
 
 void print_path(const vector<int>& v, int total) {
+	cout << total;
 	for (int i : v) cout << i << " ";
 }
