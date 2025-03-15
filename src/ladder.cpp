@@ -73,13 +73,12 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
 }
 
 void load_words(set<string> & word_list, const string& file_name) {
-	return; // avoid timeout for now
-	// ifstream f(file_name);
+	ifstream f(file_name);
 
-	// for (string word; f >> word; )
-	// 	word_list.insert(word);
+	for (string word; f >> word; )
+		word_list.insert(word);
 	
-	// f.close();
+	f.close();
 }
 
 void print_word_ladder(const vector<string>& ladder) {
