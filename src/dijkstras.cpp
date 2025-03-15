@@ -7,7 +7,7 @@ struct Node {
 	Node(int _vertex, int _weight)
 	: vertex(_vertex), weight(_weight) { }
 
-	bool operator>(const Node other) {
+	bool operator>(const Node& other) const {
 		return weight > other.weight;
 	}
 };
